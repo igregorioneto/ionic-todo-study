@@ -1,0 +1,7 @@
+{
+  "name": "whatodo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
