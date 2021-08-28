@@ -1,20 +1,60 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content>
+  <div class="home-img">
+    <img src="../../assets/todo-list.jpg" width="128" alt="Todo">
   </div>
+
+  <ion-list lines="full">
+    <ion-list-header>
+      {{list.title}}
+    </ion-list-header>
+
+    <ion-item *ngIf="list.tasks.length == 0">
+      <p><em>Nenhuma tarefa encontrada</em></p>
+    </ion-item>
+
+    <ion-item *ngFor="let item of list.tasks">
+      <ion-button slot="start" fill="clear" color="dark" (click)="toggleDone(item)">
+        <ion-icon *ngIf="item.done" name="checkmark-circle" slot="start"></ion-icon>
+        <ion-icon *ngIf="!item.done" name="radio-button-off" slot="start"></ion-icon>
+      </ion-button>
+      {{item.title}}
+
+      <ion-button slot="end" fill="clear" color="dark" (click)="removeTask(item)">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="dark">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+
+    <ion-fab-list side="top">
+      <ion-fab-button (click)="showAddTask()">
+        <ion-icon name="checkmark-circle"></ion-icon>
+      </ion-fab-button>
+
+      <ion-fab-button>
+        <ion-icon name="list"></ion-icon>
+      </ion-fab-button>
+
+      <ion-fab-button>
+        <ion-icon name="document"></ion-icon>
+      </ion-fab-button>
+
+      <ion-fab-button>
+        <ion-icon name="camera"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+
+    <ion-fab-list side="start">
+      <ion-fab-button>
+        <ion-icon name="apps"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+
+  </ion-fab>
+
 </ion-content>
