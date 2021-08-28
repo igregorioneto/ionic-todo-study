@@ -8,10 +8,11 @@
      </a>
 </h1>
 
-
+<p align="center">
 <img src="https://img.shields.io/static/v1?label=IONICTODOSTUDY&message=Greg%C3%B3rioNeto&color=7159c1&style=for-the-badge&logo=ghost">
 
 ![Cad Unidades-Faturas](https://github.com/igregorioneto/ionic-todo-study/blob/main/src/assets/ionic-todo-study.gif)
+</p>
 
 <p align="center">
  <a href="#objetivo">Objetivo</a> •
